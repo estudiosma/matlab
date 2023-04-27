@@ -1,7 +1,8 @@
 % 
 % Version 1.0
-% Date: 14-oct-2022
+% Date: 27-abr-2022
 % Autor: Molina Vidal D.A. by Estudios MA
+% Github: https://github.com/estudiosma/matlab
 %
 % [f, magnitude] = fft_ma(data, fs)
 % fft Discrete Fourier transform.
@@ -15,6 +16,7 @@
 % xlabel('Freq [Hz]');   ylabel('Amp');
 %
 function [f, magnitude] = ma_fft(data, fs)
+fprintf("Download more functions: https://github.com/estudiosma/matlab");
 NNFT = length(data);   tamano = length(data);
 %----- FFT
 Y=fft(data,NNFT)/tamano;
