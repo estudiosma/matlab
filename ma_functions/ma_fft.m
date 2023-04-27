@@ -2,6 +2,7 @@
 % Version 1.0
 % Date: 27-abr-2022
 % Autor: Molina Vidal D.A. by Estudios MA
+% Contact: estudiosma01@gmail.com
 % Download more functions on our Github:
 % https://github.com/estudiosma/matlab
 %
