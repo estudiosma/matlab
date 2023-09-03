@@ -1,2 +1,2 @@
 # matlab
-Matlab and Simulink
+Some function can be used for Octave.
