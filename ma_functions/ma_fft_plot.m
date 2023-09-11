@@ -1,6 +1,6 @@
 % 
-% Version:  1.3
-% Date:     31-ago-2023
+% Version:  1.3.1
+% Date:     11-sep-2023
 % Autor:    Molina Vidal D.A. by Estudios MA
 % Contact:  estudiosma01@gmail.com
 % Download more functions on our Github:
@@ -40,4 +40,4 @@ if new_figure == 1
 end
 
 plot(f, magnitude); grid minor
-xlabel('Freq [Hz]');   ylabel('Amp');
+xlabel('Freq [Hz]');   ylabel('Amp [V]');
