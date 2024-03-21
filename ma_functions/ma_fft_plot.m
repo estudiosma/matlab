@@ -41,3 +41,5 @@ end
 
 plot(f, magnitude); grid minor
 xlabel('Freq [Hz]');   ylabel('Amp [V]');
+
+% teste
