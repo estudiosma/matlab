@@ -1,4 +1,4 @@
-# 📈 MA FFT Tools for MATLAB
+# 📈 MA Tools for MATLAB
 
 This repository provides two lightweight and efficient MATLAB functions for frequency analysis using the Fast Fourier Transform (FFT). Designed for simplicity and ease of integration, the functions support both basic and advanced plotting options.  
 > Developed by **Molina Vidal D.A.** at [Estudios MA](https://github.com/estudiosma)
