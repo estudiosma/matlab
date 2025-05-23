@@ -56,7 +56,8 @@ end
 NNFT = length(data);
 Y = fft(data, NNFT) / NNFT;
 f = fs/2 * linspace(0, 1, floor(NNFT/2));
-magnitude = sqrt(2 * abs(Y(1:floor(NNFT/2), :)).^2);
+magnitude = 2*abs(Y(1:floor(NNFT/2), :));
+% magnitude = sqrt(2*abs(Y(1:floor(NNFT/2), :)).^2);
 
 % Plot if requested
 if showPlot
