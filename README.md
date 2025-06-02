@@ -21,8 +21,8 @@ Computes the **magnitude spectrum** of a signal using FFT.
 
 **Syntax:**
 ```matlab
-[f, magnitude] = ma_fft(data)
-[f, magnitude] = ma_fft(data, fs)
+[magnitude, f] = ma_fft(data);
+[magnitude, f] = ma_fft(data, fs);
 ```
 
 **Inputs:**
@@ -30,8 +30,8 @@ Computes the **magnitude spectrum** of a signal using FFT.
 - `fs` *(optional)*: Sampling frequency in Hz. Default = `1`.
 
 **Outputs:**
-- `f`: Frequency vector (Hz).
 - `magnitude`: Magnitude of the FFT.
+- `f`: Frequency vector (Hz).
 
 ---
 
@@ -41,10 +41,10 @@ Computes and **plots** the magnitude spectrum.
 
 **Syntax:**
 ```matlab
-[f, magnitude] = ma_fft_plot(data)
-[f, magnitude] = ma_fft_plot(data, fs)
-[f, magnitude] = ma_fft_plot(data, fs, showPlot)
-[f, magnitude] = ma_fft_plot(data, fs, showPlot, newFigure)
+[magnitude, f] = ma_fft_plot(data);
+[magnitude, f] = ma_fft_plot(data, fs);
+[magnitude, f] = ma_fft_plot(data, fs, showPlot, true);
+[magnitude, f] = ma_fft_plot(data, fs, showPlot, true,  newFigure, true);
 ```
 
 **Inputs:**
@@ -71,7 +71,7 @@ signal = sin(2*pi*50*t);   % 50 Hz sine wave
 ma_fft_plot(signal, fs);
 
 % Or compute FFT without plotting
-[f, mag] = ma_fft(signal, fs);
+[mag, f] = ma_fft(signal, fs);
 ```
 
 ---
