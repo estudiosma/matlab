@@ -1,20 +1,20 @@
 %
 % Version:  1.0
-% Date:     28-abr-2025
+% Date:     02-jun-2025
 % Author:   Molina Vidal D.A. by Estudios MA
 % Contact:  estudiosma01@gmail.com
 % Download more functions on our Github:
 % https://github.com/estudiosma/matlab
 %
-% [f, magnitude] = ma_fft_plot(data, fs, showPlot, newFigure)
-% ma_fft_plot Plots the magnitude of the discrete Fourier transform (DFT)
-% of 'data'.
+% [magnitude, f] = ma_fft_plot(data, fs, showPlot, newFigure)
+% ma_fft_plot Plots of magnitude (amplitude) of the discrete Fourier 
+% transform (DFT) of 'data'.
 %
 % Syntax:
-%   [f, magnitude] = ma_fft_plot(data)
-%   [f, magnitude] = ma_fft_plot(data, fs)
-%   [f, magnitude] = ma_fft_plot(data, fs, showPlot)
-%   [f, magnitude] = ma_fft_plot(data, fs, showPlot, newFigure)
+%   [magnitude, f] = ma_fft_plot(data)
+%   [magnitude, f] = ma_fft_plot(data, fs)
+%   [magnitude, f] = ma_fft_plot(data, fs, showPlot)
+%   [magnitude, f] = ma_fft_plot(data, fs, showPlot, newFigure)
 %
 % Inputs:
 %   - data:      Nx1 vector or NxM matrix with the signals to transform.
@@ -23,16 +23,16 @@
 %   - newFigure: (optional) true to open a new figure window, false to plot on the current figure. Default is true.
 %
 % Outputs:
-%   - f:         Frequency vector (Hz).
 %   - magnitude: Magnitude spectrum (amplitude).
+%   - f:         Frequency vector (Hz).
 %
 % Example:
 %   data = randn(1024,1);    % Example signal
 %   fs = 1000;               % Sampling frequency (Hz)
-%   [f, mag] = ma_fft_plot(data, fs, true, true);  % Plot in new figure
+%   [mag, f] = ma_fft_plot(data, fs, showPlot=true, newFigure=true;  % Plot in new figure
 %
 
-function [f, magnitude] = ma_fft_plot(data, fs, varargin)
+function [magnitude, f] = ma_fft_plot(data, fs, varargin)
 
 if nargin < 2
     fs = 1; % default fs
@@ -55,7 +55,7 @@ end
 % Compute FFT
 NNFT = length(data);
 Y = fft(data, NNFT) / NNFT;
-f = fs/2 * linspace(0, 1, floor(NNFT/2));
+f = fs/2 * linspace(0, 1, floor(NNFT/2))';
 magnitude = 2*abs(Y(1:floor(NNFT/2), :));
 % magnitude = sqrt(2*abs(Y(1:floor(NNFT/2), :)).^2);
 
@@ -68,5 +68,5 @@ if showPlot
     xlabel('Frequency (Hz)');
     ylabel('Magnitude');
     grid on;
-    title('FFT Magnitude Spectrum');
+    title('FFT Magnitude (Amplitude) Spectrum');
 end
