@@ -66,7 +66,7 @@ if showPlot
     end
     plot(f, magnitude);
     xlabel('Frequency (Hz)');
-    ylabel('Magnitude');
+    ylabel('Amplitude (V)');
     grid on;
     title('FFT Magnitude (Amplitude) Spectrum');
 end
