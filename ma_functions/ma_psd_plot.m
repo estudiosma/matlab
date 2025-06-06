@@ -32,7 +32,7 @@
 %   [f, mag] = ma_fft_plot(data, fs, true, true);  % Plot in new figure
 %
 
-function [f, magnitude] = ma_psd_plot(data, fs, varargin)
+function [f, psd, a] = ma_psd_plot(data, fs, varargin)
 
 if nargin < 2
     fs = 1; % default fs
@@ -56,17 +56,19 @@ end
 NNFT = length(data);
 Y = fft(data, NNFT);
 f = fs/2 * linspace(0, 1, floor(NNFT/2));
-magnitude = (abs(Y(1:floor(NNFT/2), :)).^2) / (fs*NNFT);
-magnitude = sqrt(magnitude);
+psd = (abs(Y(1:floor(NNFT/2), :)).^2) / (fs*NNFT);
+psd = sqrt(psd);
 
 % Plot if requested
 if showPlot
     if newFigure
         figure;
     end
-    plot(f, (magnitude));
+    plot(f, (psd));
     xlabel('Frequency (Hz)');
     ylabel('PSD (V^2/Hz)');
     grid on;
     title('Power Spectral Density');
 end
+
+a = trapz(psd);
